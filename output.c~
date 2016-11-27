@@ -1,0 +1,25 @@
+#include<iostream>
+
+int main() 
+{
+long _t0=0; long a=0; 
+ asm(
+	 "block0 : \n\t"
+	 "movq $1, %%rax\n\t"
+	 "movq $2, %%rbx\n\t"
+	 "addq %%rbx, %%rax\n\t"
+	 "movq %%rax, %[_t0]\n\t"
+	 "movq %[_t0], %%rbx\n\t"
+	 "movq %%rax, %[a]\n\t"
+ 	 "push %[a]\n\t"
+ 	 "call printf\n\t"
+         "pop %[a]\n\t"
+
+:
+	 [_t0] "=g"(_t0),
+	 [a] "=g"(a)
+        : "+a" (a)
+:
+
+);
+}

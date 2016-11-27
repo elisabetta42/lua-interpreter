@@ -1,0 +1,10 @@
+#include<string.h>
+#include<sstream>
+#include <stdio.h>
+
+int main() 
+{
+char *st ="ciao\n"; long l=13;
+printf("%s\n",st);
+printf("%ld\n",l);
+}

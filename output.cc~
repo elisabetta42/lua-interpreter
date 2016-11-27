@@ -1,0 +1,87 @@
+#include<iostream>
+#include<string.h>
+#include<sstream>
+int main() 
+{
+std::string nlong= "%ld\n";std::string nst= "%s\n";std::string st= "%s";std::string llong= "%ld";long "*number"=0; long _t2=0; long _t3=0; long _t4=0; long _t8=0; long _t9=0; long i=0; long n=0; std::string _t0= "enter a number:";long len_t0=_t0.size() ;std::string _t6= " is a factor of ";long len_t6=_t6.size() ;
+ asm(
+	"block0 : \n\t"
+	"movq %[_t0], %%rsi \n\t"
+	"movq %[nst], %%rdi \n\t"
+	"movq  $0, %%rax \n\t"
+	"call  printf \n\t"
+	"movq  $0, %%rax \n\t"
+	"leaq %[_t1], %%rsi \n\t"
+	"movq %[llong], %%rdi\n\t"
+	"call scanf\n\t"
+	"movq %[_t1], %%rax\n\t"
+	"movq %%rax, %[n]\n\t"
+	"movq $2, %%rax\n\t"
+	"movq %%rax, %[i]\n\t"
+	"movq %[i], %%rax\n\t"
+	"movq %[n], %%rbx\n\t"
+	"subq %%rbx, %%rax\n\t"
+	"jg block4\n\t"
+	"jmp block1\n\t"
+	"block1 : \n\t"
+	"movq %[n], %%rax\n\t"
+	"movq %[i], %%rbx\n\t"
+	"xor %%rdx, %%rdx \n\t"
+	"divq %%rbx\n\t"
+	"movq %%rdx, %[_t3]\n\t"
+	"movq %[_t3], %%rax\n\t"
+	"movq $0, %%rbx\n\t"
+	"subq %%rax, %%rbx\n\t"
+	"jne block3\n\t"
+	"jmp block2\n\t"
+	"block2 : \n\t"
+	"movq %[i], %%rsi \n\t"
+	"movq %[llong], %%rdi \n\t"
+	"movq  $0, %%rax \n\t"
+	"call  printf \n\t"
+	"movq  $0, %%rax \n\t"
+	"movq %[_t6], %%rsi \n\t"
+	"movq %[st], %%rdi \n\t"
+	"movq  $0, %%rax \n\t"
+	"call  printf \n\t"
+	"movq  $0, %%rax \n\t"
+	"movq %[n], %%rsi \n\t"
+	"movq %[nlong], %%rdi \n\t"
+	"movq  $0, %%rax \n\t"
+	"call  printf \n\t"
+	"movq  $0, %%rax \n\t"
+	"block3 : \n\t"
+	"movq %[i], %%rax\n\t"
+	"movq $1, %%rbx\n\t"
+	"addq %%rbx, %%rax\n\t"
+	"movq %%rax, %[_t8]\n\t"
+	"movq %[_t8], %%rax\n\t"
+	"movq %%rax, %[i]\n\t"
+	"movq %[i], %%rax\n\t"
+	"movq %[n], %%rbx\n\t"
+	"subq %%rbx, %%rax\n\t"
+	"jg block4\n\t"
+	"jmp block1\n\t"
+	"block4 : \n\t"
+:
+:
+	 [_t1] "g"(_t1),
+	 [_t2] "g"(_t2),
+	 [_t3] "g"(_t3),
+	 [_t4] "g"(_t4),
+	 [_t8] "g"(_t8),
+	 [_t9] "g"(_t9),
+	 [i] "g"(i),
+	 [n] "g"(n),
+	 [_t0] "g"(_t0),
+	 [len_t0] "g"(len_t0),
+	 [_t6] "g"(_t6),
+	 [len_t6] "g"(len_t6),
+	 [st] "g"(st),
+	 [nlong] "g"(nlong),
+	 [nst] "g"(nst),
+	 [llong] "g"(llong)
+
+:
+);
+}

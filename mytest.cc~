@@ -1,0 +1,11 @@
+#include<iostream>
+#include<string.h>
+#include<sstream>
+#include<stdio.h>
+int main() 
+{
+long i=0;
+scanf("%ld\n",*i);
+
+return 0;
+}

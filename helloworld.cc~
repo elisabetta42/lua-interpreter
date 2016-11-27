@@ -1,0 +1,19 @@
+#include<iostream>
+#include <string.h>
+int main() 
+{
+ string str = "Mamma \n";
+ long len = strlen(str);
+ int ret=0;
+ asm(
+         "movq $1, %%rax \n\t"
+	 "movq $1, %%rdi \n\t"
+         "movq %[str], %%rsi \n\t"
+	 "movq %[len], %%rdx \n\t"
+	 "syscall \n\t"
+            : "=g"(ret)
+            : "g"(str), "g" (len)
+: "rax", "rbx", "rdx", "cc"
+    );
+return 0;
+}
